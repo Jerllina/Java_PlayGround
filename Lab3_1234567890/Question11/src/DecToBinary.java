@@ -10,6 +10,7 @@ public class DecToBinary {
         System.out.print("Input a Decimal Number : ");
         dec_num = scan.nextInt();
 		
+        //dec to binary,method1:
         quot = dec_num;
 		
         while(quot != 0)
@@ -24,7 +25,23 @@ public class DecToBinary {
             System.out.print(bin_num[j]);
         }
         System.out.print("\n");
+        
+        //dec to binary,method2
+		String bin_num2 = Integer.toBinaryString(dec_num);
+		System.out.println("Binary number is: " + bin_num2);
+		
+		
+		System.out.print("The reverse order of it is: ");
+		
+		//get the length of the binary number
+		int length = bin_num2.length();
+		//bitwise method to get the reverse
+		for (int k = 0;k<length;k++) {
+			int rev_bin = (dec_num&(1<<k))>>k;//get every bit of the input and print it out
+			System.out.print(rev_bin);//print the reverse of the binary number
+        
 
+        }
 	}
 
 }
